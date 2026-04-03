@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rowContext {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .rowContext {
+    grid-template-columns: 1fr;
+  }
+}

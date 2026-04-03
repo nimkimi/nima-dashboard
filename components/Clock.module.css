@@ -1,0 +1,28 @@
+.root {
+  text-align: center;
+  padding: 32px 0 20px;
+}
+
+.greeting {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.time {
+  display: block;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--text);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 8px;
+}
+
+.date {
+  font-size: 15px;
+  color: var(--dim);
+}

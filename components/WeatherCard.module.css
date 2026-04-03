@@ -1,0 +1,65 @@
+.state {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.icon {
+  font-size: 42px;
+  line-height: 1;
+}
+
+.temp {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.condition {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.city {
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.stats {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 12px;
+}
+
+.stats li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.statLabel {
+  color: var(--muted);
+}
+
+.statValue {
+  color: var(--text);
+  font-weight: 500;
+}

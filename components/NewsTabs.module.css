@@ -1,0 +1,96 @@
+.tabList {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  letter-spacing: 0.3px;
+}
+
+.tab:hover {
+  background: rgba(124, 106, 255, 0.1);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.tabActive {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.state {
+  color: var(--muted);
+  font-size: 14px;
+  padding: 8px 0;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.item {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  transition: background 0.12s;
+}
+
+.item:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rank {
+  font-size: 11px;
+  color: var(--dim);
+  font-variant-numeric: tabular-nums;
+  min-width: 18px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  display: block;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.12s;
+}
+
+.title:hover {
+  color: var(--accent2);
+}
+
+.meta {
+  display: flex;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--dim);
+  margin-top: 3px;
+  flex-wrap: wrap;
+}
