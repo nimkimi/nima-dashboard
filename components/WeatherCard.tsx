@@ -6,8 +6,8 @@ export default function WeatherCard() {
   const { weather, loading, error } = useWeather();
 
   return (
-    <section className="card" aria-label="Weather">
-      <p className="card-label">🌤 Weather</p>
+    <section className={`glass ${styles.root}`} aria-label="Weather">
+      <p className="eyebrow">Weather</p>
 
       {loading && <p className={styles.state}>Detecting location…</p>}
       {error && <p className={styles.state} role="alert">{error}</p>}
@@ -16,24 +16,25 @@ export default function WeatherCard() {
         <div className={styles.body}>
           <div className={styles.main}>
             <span className={styles.icon} aria-hidden="true">{weather.icon}</span>
-            <div>
-              <span className={styles.temp}>{weather.temp}°C</span>
-              <span className={styles.condition}>{weather.condition}</span>
+            <div className={styles.tempGroup}>
+              <span className={styles.temp}>{weather.temp}</span>
+              <span className={styles.unit}>°C</span>
             </div>
           </div>
-          <p className={styles.city}>{weather.city}</p>
+          <p className={styles.condition}>{weather.condition}</p>
+          <p className={styles.city}>📍 {weather.city}</p>
           <ul className={styles.stats} aria-label="Weather details">
-            <li>
-              <span className={styles.statLabel}>Feels like</span>
+            <li className={styles.stat}>
+              <span className={styles.statLabel}>Feels</span>
               <span className={styles.statValue}>{weather.feelsLike}°</span>
             </li>
-            <li>
-              <span className={styles.statLabel}>Humidity</span>
+            <li className={styles.stat}>
+              <span className={styles.statLabel}>Hum.</span>
               <span className={styles.statValue}>{weather.humidity}%</span>
             </li>
-            <li>
+            <li className={styles.stat}>
               <span className={styles.statLabel}>Wind</span>
-              <span className={styles.statValue}>{weather.windSpeed} mph</span>
+              <span className={styles.statValue}>{weather.windSpeed}<small>mph</small></span>
             </li>
           </ul>
         </div>

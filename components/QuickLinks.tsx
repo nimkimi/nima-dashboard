@@ -24,18 +24,18 @@ export default function QuickLinks() {
   }
 
   return (
-    <section className="card" aria-label="Quick links">
-      <p className="card-label">
-        🔗 Quick Links
+    <section className={`glass ${styles.root}`} aria-label="Quick links">
+      <div className={styles.header}>
+        <p className="eyebrow" style={{ marginBottom: 0, flex: 1 }}>Quick Links</p>
         <button
           className={styles.editBtn}
           onClick={() => setEditing((v) => !v)}
           aria-expanded={editing}
-          aria-label={editing ? 'Close editor' : 'Edit links'}
+          aria-label={editing ? 'Close editor' : 'Add link'}
         >
-          {editing ? '✕ Close' : '+ Add'}
+          {editing ? '✕' : '+'}
         </button>
-      </p>
+      </div>
 
       {editing && (
         <form id={formId} className={styles.addForm} onSubmit={addLink} aria-label="Add new link">
@@ -51,7 +51,7 @@ export default function QuickLinks() {
           <input
             className={styles.addInput}
             type="url"
-            placeholder="https://..."
+            placeholder="https://…"
             value={draft.url}
             onChange={(e) => setDraft((d) => ({ ...d, url: e.target.value }))}
             required
@@ -66,17 +66,24 @@ export default function QuickLinks() {
             onChange={(e) => setDraft((d) => ({ ...d, icon: e.target.value }))}
             aria-label="Link icon emoji"
           />
-          <button className={styles.saveBtn} type="submit">Save</button>
-          <button className={styles.resetBtn} type="button" onClick={() => setLinks(resetLinks())}>
-            Reset defaults
-          </button>
+          <div className={styles.formActions}>
+            <button className={styles.saveBtn} type="submit">Save</button>
+            <button className={styles.resetBtn} type="button" onClick={() => setLinks(resetLinks())}>
+              Reset
+            </button>
+          </div>
         </form>
       )}
 
       <ul className={styles.grid} role="list">
         {links.map((link) => (
           <li key={link.id} className={styles.item}>
-            <a href={link.url} className={styles.link} target="_blank" rel="noopener noreferrer">
+            <a
+              href={link.url}
+              className={styles.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className={styles.linkIcon} aria-hidden="true">{link.icon}</span>
               <span className={styles.linkLabel}>{link.label}</span>
             </a>
